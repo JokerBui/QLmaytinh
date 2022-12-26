@@ -1,0 +1,46 @@
+﻿@model IEnumerable<WebMayTinh.Models.Entity.Thuong_Hieu>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>THUONG HIEU</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ten)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ten)
+        </td>
+        <td>
+            <button class="btn btn-success btn-sm" href="#">
+                <i class="fas fa-folder">
+                </i>
+                @Html.ActionLink("Details", "Details", new { id = item.MaThuongHieu }, new { @style = " color : white " })
+            </button>
+            <button class="btn btn-danger btn-sm" href="#">
+                <i class="fas fa-pencil-alt">
+                </i>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaThuongHieu }, new { @style = " color : white " })
+            </button>
+            <button class="btn btn-warning btn-sm" href="#">
+                <i class="fas fa-trash">
+                </i>
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaThuongHieu }, new { @style = " color : white " })
+            </button>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<WebMayTinh.Models.Entity.San_Pham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>SAN PHAM</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Thuong_Hieu.Ten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoTa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Anh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaBan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiaNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GhiChu)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Thuong_Hieu.Ten)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoTa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Anh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaBan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiaNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GhiChu)
+        </td>
+        <td>
+            <button class="btn btn-success btn-sm" href="#">
+                <i class="fas fa-folder">
+                </i>
+                @Html.ActionLink("Details", "Details", new { id = item.MaSanPham }, new { @style = " color : white " })
+            </button>
+            <button class="btn btn-danger btn-sm" href="#">
+                <i class="fas fa-pencil-alt">
+                </i>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaSanPham }, new { @style = " color : white " })
+            </button>
+            <button class="btn btn-warning btn-sm" href="#">
+                <i class="fas fa-trash">
+                </i>
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaSanPham }, new { @style = " color : white " })
+            </button>
+        </td>
+    </tr>
+}
+
+</table>
